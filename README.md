@@ -1,11 +1,11 @@
-# svelte-persist
+# svelte-persistent
 
-Demo: https://leodog896.github.io/svelte-persist/
+Demo: https://leodog896.github.io/svelte-persistent/
 
 localStorage and sessionStorage writables for SvelteKit & Svelte. SSR safe.
 
 ```bash
-npm i -D svelte-persist
+npm i -D svelte-persistent
 ```
 
 ```ts

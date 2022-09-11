@@ -1,12 +1,12 @@
 {
-	"name": "svelte-persist",
+	"name": "svelte-persistent",
 	"description": "Svelte writables for local & session storage",
 	"author": "LeoDog896",
 	"license": "MIT",
-	"homepage": "https://leodog896.github.io/svelte-persist",
-	"repository": "https://github.com/LeoDog896/svelte-persist",
+	"homepage": "https://leodog896.github.io/svelte-persistent",
+	"repository": "https://github.com/LeoDog896/svelte-persistent",
 	"bugs": {
-		"url": "https://github.com/LeoDog896/svelte-persist/issues"
+		"url": "https://github.com/LeoDog896/svelte-persistent/issues"
 	},
 	"keywords": [
 		"svelte",

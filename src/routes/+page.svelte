@@ -6,11 +6,11 @@
 </script>
 
 <main>
-	<h1>svelte-persist</h1>
-	<h3><a href="https://github.com/LeoDog896/svelte-persist">github</a></h3>
+	<h1>svelte-persistent</h1>
+	<h3><a href="https://github.com/LeoDog896/svelte-persistent">github</a></h3>
 	<p>ridiculously simple svelte writable persistance: SvelteKit first, with Svelte support</p>
 
-	<p><code>npm i -D svelte-persist</code></p>
+	<p><code>npm i -D svelte-persistent</code></p>
 
 	<p>
 		<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">Local:</a>
@@ -22,7 +22,7 @@
 	</p>
 
 	<p>
-		NOTE: <b>svelte-persist only works with strings.</b> This library is best paired with
+		NOTE: <b>svelte-persistent only works with strings.</b> This library is best paired with
 		<a href="https://github.com/PixievoltNo1/svelte-writable-derived">svelte-writable-derived</a>
 	</p>
 
