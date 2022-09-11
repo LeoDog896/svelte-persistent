@@ -25,9 +25,25 @@
 		NOTE: <b>svelte-persist only works with strings.</b> This library is best paired with
 		<a href="https://github.com/PixievoltNo1/svelte-writable-derived">svelte-writable-derived</a>
 	</p>
+
+
+    <pre><code>{`import {
+    localStore, sessionStore
+} from '$lib/index';
+
+// key, default value if none loaded.
+const local = localStore('content', 'local');
+const session = sessionStore('content', 'session');`}</code></pre>
 </main>
 
 <style>
+    pre {
+        font-family: monospace;
+        background-color: #eee;
+        padding: 0.5rem;
+        text-align: left;
+    }
+
 	main {
 		margin: 7rem;
 	}
