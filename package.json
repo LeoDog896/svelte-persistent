@@ -1,6 +1,6 @@
 {
 	"name": "svelte-persist",
-	"description": "Svelte Writables for local & session storage",
+	"description": "Svelte writables for local & session storage",
 	"author": "LeoDog896",
 	"license": "MIT",
 	"homepage": "https://leodog896.github.io/svelte-persist",
