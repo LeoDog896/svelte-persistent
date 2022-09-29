@@ -9,7 +9,7 @@ npm i -D svelte-persistent
 ```
 
 ```ts
-import { localStore, sessionStore } from '$lib/index';
+import { localStore, sessionStore } from 'svelte-persistent';
 
 // key, default value if none loaded.
 const local = localStore('content', 'local');
