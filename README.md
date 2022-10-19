@@ -22,7 +22,7 @@ const session = sessionStore('content', 'session');
 import { localStore } from 'svelte-persistent'; // or sessionStorage!
 import writableDerived from "svelte-writable-derived";
 
-var objectStore = writableDerived(
+const objectStore = writableDerived(
 	localStore('content', '{}'), // create a local store with key: content, defaultValue: {}
 	(json) => JSON.parse(json),
 	(object) => JSON.stringify(object)
