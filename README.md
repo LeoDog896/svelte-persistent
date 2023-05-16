@@ -1,4 +1,4 @@
-# svelte-persistent
+# svelte-persistent (use https://github.com/joshnuss/svelte-local-storage-store instead)
 
 Demo: https://leodog896.github.io/svelte-persistent/
 
