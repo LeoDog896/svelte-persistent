@@ -8,6 +8,14 @@ interface StorageLike {
 
 type Serializable = unknown;
 
+/**
+ * Store wrapper object. Wraps around any Storage object and turns it into a writable store.
+ * @param key The key to store the value under.
+ * @param initialValue The initial value to store.
+ * @param storage The storage object to use. (Must be a lambda to run onMount)
+ * @param storageName The name of the storage object.
+ * @returns A writable store.
+ */
 function store<T extends Serializable>(
 	key: string,
 	initialValue: T,
@@ -32,10 +40,20 @@ function store<T extends Serializable>(
 	};
 }
 
+/**
+ * Create a `Writable` store that allows both updating and reading by subscription.
+ * 
+ * Backed by localStorage.
+ */
 export function localStore<T extends Serializable>(key: string, initialValue: T): Writable<T> {
 	return store(key, initialValue, () => localStorage, 'localStorage');
 }
 
+/**
+ * Create a `Writable` store that allows both updating and reading by subscription.
+ * 
+ * Backed by sessionStorage.
+ */
 export function sessionStore<T extends Serializable>(key: string, initialValue: T): Writable<T> {
 	return store(key, initialValue, () => sessionStorage, 'sessionStorage');
 }
