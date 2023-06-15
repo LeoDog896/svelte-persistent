@@ -6,34 +6,36 @@ interface StorageLike {
 	setItem(key: string, value: string): void;
 }
 
-function store(
+type Serializable = unknown;
+
+function store<T extends Serializable>(
 	key: string,
-	initialValue: string,
+	initialValue: T,
 	storage: () => StorageLike,
 	storageName: string
-): Writable<string> {
-	const { subscribe, set, update } = writable(initialValue);
+): Writable<T> {
+	const { subscribe, set, update } = writable<T>(initialValue);
 
 	onMount(() => {
 		const value = storage().getItem(key);
 		if (!value) return;
-		set(value);
+		set(JSON.parse(value));
 	});
 
 	return {
 		subscribe,
 		update,
-		set: (value: string) => {
-			storageName in globalThis && storage().setItem(key, value);
+		set: (value: T) => {
+			storageName in globalThis && storage().setItem(key, JSON.stringify(value));
 			set(value);
 		}
 	};
 }
 
-export function localStore(key: string, initialValue: string): Writable<string> {
+export function localStore<T extends Serializable>(key: string, initialValue: T): Writable<T> {
 	return store(key, initialValue, () => localStorage, 'localStorage');
 }
 
-export function sessionStore(key: string, initialValue: string): Writable<string> {
+export function sessionStore<T extends Serializable>(key: string, initialValue: T): Writable<T> {
 	return store(key, initialValue, () => sessionStorage, 'sessionStorage');
 }

@@ -2,7 +2,7 @@
 	import { localStore, sessionStore } from '$lib/index';
 
 	const local = localStore('content', 'local');
-	const session = sessionStore('content', 'session');
+	const session = sessionStore('content', 5);
 </script>
 
 <main>
@@ -18,31 +18,35 @@
 	</p>
 	<p>
 		<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage">Session:</a>
-		<input bind:value={$session} />
+		<input type="number" bind:value={$session} />
 	</p>
 
-	<p>
-		NOTE: <b>svelte-persistent only works with strings.</b> This library is best paired with
-		<a href="https://github.com/PixievoltNo1/svelte-writable-derived">svelte-writable-derived</a>
-	</p>
-
-
-    <pre><code>{`import {
+	<pre><code
+			>{`import {
     localStore, sessionStore
 } from '$lib/index';
 
 // key, default value if none loaded.
 const local = localStore('content', 'local');
-const session = sessionStore('content', 'session');`}</code></pre>
+const session = sessionStore('content', 'session');`}</code
+		></pre>
 </main>
 
+<p>
+	You can use any serializable into JSON object, not just strings. The input above is bound to a
+	number, but the store is a string.
+</p>
+
+<p>
+	<a href="https://github.com/LeoDog896/svelte-persistent/blob/main/src/routes/%2Bpage.svelte">View this pages source</a>
+</p>
 <style>
-    pre {
-        font-family: monospace;
-        background-color: #eee;
-        padding: 0.5rem;
-        text-align: left;
-    }
+	pre {
+		font-family: monospace;
+		background-color: #eee;
+		padding: 0.5rem;
+		text-align: left;
+	}
 
 	main {
 		margin: 7rem;
