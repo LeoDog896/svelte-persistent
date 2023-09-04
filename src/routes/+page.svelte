@@ -7,8 +7,8 @@
 
 <main>
 	<h1>svelte-persistent</h1>
-	<h3><a href="https://github.com/LeoDog896/svelte-persistent">github</a></h3>
-	<p>ridiculously simple svelte writable persistance: SvelteKit first, with Svelte support</p>
+	<h3><a href="https://github.com/LeoDog896/svelte-persistent">github</a> | <a href="https://npmjs.com/package/svelte-persistent">npm</a></h3>
+	<p>ridiculously simple svelte writable persistence: SvelteKit first, with Svelte support</p>
 
 	<p><code>npm i -D svelte-persistent</code></p>
 
@@ -30,16 +30,16 @@
 const local = localStore('content', 'local');
 const session = sessionStore('content', 'session');`}</code
 		></pre>
+
+	<p>
+		You can use any serializable into JSON object, not just strings. The input above is bound to a
+		number, but the store is a string.
+	</p>
+
+	<p>
+		<a href="https://github.com/LeoDog896/svelte-persistent/blob/main/src/routes/%2Bpage.svelte">View this page's source</a>
+	</p>
 </main>
-
-<p>
-	You can use any serializable into JSON object, not just strings. The input above is bound to a
-	number, but the store is a string.
-</p>
-
-<p>
-	<a href="https://github.com/LeoDog896/svelte-persistent/blob/main/src/routes/%2Bpage.svelte">View this pages source</a>
-</p>
 <style>
 	pre {
 		font-family: monospace;

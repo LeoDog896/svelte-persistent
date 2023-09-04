@@ -4,6 +4,7 @@ import { onMount } from 'svelte';
 interface StorageLike {
 	getItem(key: string): string | null;
 	setItem(key: string, value: string): void;
+	hasOwnProperty(key: string): boolean;
 }
 
 type Serializable = unknown;
@@ -25,8 +26,9 @@ function store<T extends Serializable>(
 	const { subscribe, set, update } = writable<T>(initialValue);
 
 	onMount(() => {
-		const value = storage().getItem(key);
-		if (!value) return;
+		const instance = storage();
+		if (!Object.prototype.hasOwnProperty.call(instance, key)) return;
+		const value = storage().getItem(key) ?? "null";
 		set(JSON.parse(value));
 	});
 
